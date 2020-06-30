@@ -1,3 +1,18 @@
-body {
+body{
+    margin: 0 auto;
+    padding: 15px;
+}
+
+
+#high-score {
+padding: 20px;
+}
+
+#timer {
+padding: 20px;
+text-align: right;;  
+}
+
+.container {
     text-align: center;
 }
