@@ -1,20 +1,21 @@
-
 var startBtn = document.querySelector("#start-button")
-var timeEl = document.querySelector("#timer"); //makes pointers to html elements
+var timeEl = document.querySelector("#timer")
 
-var secondsLeft = 75;
 
+
+
+// creates a timer that counts down from 75 when start button is pressed
 function setTime() {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = "Timer: " + secondsLeft;
-    //if counted down to zero we stop
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      sendMessage();
-    }
+    var secondsLeft = 75;
 
-  }, 1000);
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeEl.textContent = "Timer: " + secondsLeft;
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+    }, 1000);
 }
+startBtn.addEventListener("click", setTime)
 
-setTime();
