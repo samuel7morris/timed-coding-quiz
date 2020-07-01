@@ -16,3 +16,16 @@ text-align: right;;
 .container {
     text-align: center;
 }
+
+button {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 8px;
+    border-color: red;
+    background-color: white;
+}
+
+#start-button {
+    border-style: solid;
+    background-color: lightgreen;
+}
