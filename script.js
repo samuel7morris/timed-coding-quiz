@@ -6,17 +6,17 @@ var questions = [
     {
         question: "What is a boolean",
         answers: ["a true or false statement", "a set of numbers", "a line of text", "a pack of kittens"],
-        correctAns:  "answer1",
+        correctAns:  "answer1"
     },
     {
         question: "what is front end development",
         answers: ["the mechanics of a website", "developing grills for sports cars", "the visual aspect of a website", "the storage of data in a website"],
-        correctAns:  "the visual aspect of a website",
+        correctAns:  "the visual aspect of a website"
     },
     {
         question: "What is the best type of desert",
         answers: ["Cookies and milk", "ice cream", "birthday cake", "apple pie"],
-        correctAns:  "apple pie",
+        correctAns:  "apple pie"
     },
 ]
 
@@ -35,6 +35,7 @@ function createQuestion() {
 
     for (var i = 0; i < ans.length; i++) {
         var ansBtn = document.createElement("button")
+        ansBtn.setAttribute("value", ans[i])
         ansBtn.textContent = ans[i]
         document.querySelector("#questions").appendChild(ansBtn)
         ansBtn.addEventListener("click", checkAnswer)
@@ -42,16 +43,17 @@ function createQuestion() {
 }
 
 function checkAnswer(event) {
-    if (questions[j].correctAns){
-        console.log("correct")
-        secondsLeft--
-    } else {
+    if (questions[j].correctAns !== this.value ){
         console.log("incorrect")
+        secondsLeft-=10
+    } else {
+    
     }
-    if(j < questions.length) {
+    if(j < questions.length - 1) {
         j++
         createQuestion()
-    } else {
+    } 
+    else {
         endGame()
     }
 }
@@ -59,7 +61,7 @@ function checkAnswer(event) {
 function endGame() {
     clearInterval
     document.querySelector("#results").setAttribute("style", "display:block")
-    localStorage.getItem()
+    // localStorage.getItem()
 }
 
 function counter () {
