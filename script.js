@@ -68,6 +68,7 @@ function counter () {
         if(secondsLeft===0) {
             clearInterval(interval)
         } else {
+            timeEl.textContent = secondsLeft
             return secondsLeft
         }
     }, 1000)
@@ -75,15 +76,14 @@ function counter () {
 
 function endGame() {
     clearInterval(counter)
+
     var yourScore = document.getElementById("results")
     yourScore.textContent = secondsLeft
-}
-
-function scoreStorage() {
     JSON.stringify(yourScore)
-
+    localStorage.setItem("High Score", JSON.stringify(yourScore)
+    )
+    
 }
-
 
 startBtn.addEventListener("click", createQuestion)
 startBtn.addEventListener("click", counter)
