@@ -92,6 +92,8 @@ function endGame() {
     highScoreList.push(userId)
 
     localStorage.setItem("highscores", JSON.stringify(highScoreList))
+
+    
     
    
 
