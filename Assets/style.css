@@ -3,6 +3,10 @@ body{
     padding: 15px;
 }
 
+h1 {
+    text-align: center;
+}
+
 
 #high-score {
 padding: 20px;
@@ -28,4 +32,11 @@ button {
 #start-button {
     border-style: solid;
     background-color: lightgreen;
+}
+
+#list-of-scores {
+    font-size: 35px;
+    text-align: center;
+    border-style: solid;
+    
 }
