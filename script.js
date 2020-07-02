@@ -61,7 +61,7 @@ function checkAnswer(event) {
     }
 }
 
-function counter () {
+function counter () { 
     interval = setInterval(function() {
         document.querySelector("#timer")
         secondsLeft--
@@ -78,12 +78,40 @@ function endGame() {
     clearInterval(counter)
 
     var yourScore = document.getElementById("results")
-    yourScore.textContent = secondsLeft
-    JSON.stringify(yourScore)
-    localStorage.setItem("High Score", JSON.stringify(yourScore)
-    )
+    yourScore.textContent = secondsLeft;
+    var highScore = JSON.stringify(yourScore.textContent)
+
+    localStorage.setItem("High Score", highScore)
+    
+
     
 }
 
+
+
 startBtn.addEventListener("click", createQuestion)
 startBtn.addEventListener("click", counter)
+
+
+
+//create html input with id of name and a type of "text"
+    //user doc.getelement by id to select that input
+    // save it to a variable, and use it to make a new high score object
+    // get current highscores from local storage using .getItem and save to a variable
+    // pass variable into JSON. parse to turn back into array 
+    //make a new high score array using the newest high score and all of the existing high scores
+     
+/*
+var highScores = JSON.parse(localStorage.getItem("High Score"));
+console.log(highScores)
+
+var newScore = {name: nameValue, score: secondsLeft};
+
+let newArray = [newScore, ...highScores];
+
+
+
+var arrayOfObjects = [
+    {name: "thomas", highScore: "1000000000"},
+    {name: "benjamin", highScore: "45"}
+]*/
