@@ -6,7 +6,7 @@ var questions = [
     {
         question: "What is a boolean",
         answers: ["a true or false statement", "a set of numbers", "a line of text", "a pack of kittens"],
-        correctAns:  "answer1"
+        correctAns:  "a true or false statement"
     },
     {
         question: "what is front end development",
@@ -43,11 +43,14 @@ function createQuestion() {
 }
 
 function checkAnswer(event) {
-    if (questions[j].correctAns !== this.value ){
-        console.log("incorrect")
-        secondsLeft-=10
+    var answer = event.target.textContent
+    if (answer === questions[j].correctAns){
+        console.log(secondsLeft)
+        alert("correct")
     } else {
-    
+        secondsLeft-=10   
+        console.log(secondsLeft)
+        alert("incorrect")
     }
     if(j < questions.length - 1) {
         j++
@@ -56,12 +59,6 @@ function checkAnswer(event) {
     else {
         endGame()
     }
-}
-
-function endGame() {
-    clearInterval
-    document.querySelector("#results").setAttribute("style", "display:block")
-    // localStorage.getItem()
 }
 
 function counter () {
@@ -76,7 +73,16 @@ function counter () {
     }, 1000)
 }
 
+function endGame() {
+    clearInterval(counter)
+    var yourScore = document.getElementById("results")
+    yourScore.textContent = secondsLeft
+}
 
+function scoreStorage() {
+    JSON.stringify(yourScore)
+
+}
 
 
 startBtn.addEventListener("click", createQuestion)
